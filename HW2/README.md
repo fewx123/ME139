@@ -18,7 +18,7 @@ source .venv/bin/activate
 
 # Upgrade pip and install required packages
 python -m pip install --upgrade pip
-pip install pandas matplotlib
+pip install -r requirements.txt
 ```
 
 Note: The `venv/` in this repo is Windows-specific and won’t be usable on macOS/Linux. Use `.venv` as shown above on macOS/Linux.
@@ -34,8 +34,10 @@ For each input file you’ll get:
   - `hip_patients-as-cols.csv`
   - `knee_patients-as-cols.csv`
   - `ankle_patients-as-cols.csv` (ankle values include a +15 offset, and `Average` reflects that)
-- PNG chart with all patients plotted and the `Average` line in bold black:
+- PNG chart with all patients plotted, the `Average` line in bold black, and the red fitted curve:
   - `hip_chart.png`, `knee_chart.png`, `ankle_chart.png`
+- Additional stride plots and summary:
+  - `stride_chart.png`, `stride_path.png`, `stride_summary.txt`
 
 ### 3b) Merge the three charts into one PDF (Pandoc)
 
@@ -64,8 +66,15 @@ Notes:
 deactivate
 ```
 
-### macOS notes
-- Use `python3` to create the venv and `python` while the venv is active (as shown). If `python` maps to the system Python, run `python3` in all commands.
+### Windows setup notes
+- Use the included `venv\` only on Windows. On macOS/Linux, create `.venv` as shown.
+- On Windows PowerShell you can install via:
+```powershell
+python -m venv .venv
+. .\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
 
 ### Optional: Re-create requirements file
 ```bash
