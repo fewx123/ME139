@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Generated charts and outputs
+ankle_chart.png
+hip_chart.png
+knee_chart.png
+stride_chart.png
+stride_path.png
+stride_summary.txt
+*_fit_summary.txt
+*_patients-as-cols.csv
+
+# Optional: ignore the homework PDF if you don't want it tracked
+Homework 2.pdf
+
+
